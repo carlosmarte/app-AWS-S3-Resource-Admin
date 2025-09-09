@@ -1,0 +1,31 @@
+{
+  "name": "aws-s3-resource-admin",
+  "version": "1.0.0",
+  "description": "Full-stack AWS S3 management application with React 19 and Fastify",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm run dev --workspace=server",
+    "dev:client": "npm run dev --workspace=client",
+    "build": "npm run build --workspace=client && npm run build --workspace=server",
+    "start": "npm run start --workspace=server",
+    "test": "npm run test --workspaces",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:headed": "playwright test --headed",
+    "lint": "npm run lint --workspaces",
+    "clean": "rm -rf node_modules server/node_modules client/node_modules"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

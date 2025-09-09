@@ -1,0 +1,33 @@
+{
+  "name": "s3-admin-server",
+  "version": "1.0.0",
+  "description": "Fastify backend for AWS S3 Resource Admin",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "build": "echo 'No build step required for Node.js'",
+    "test": "echo 'Tests not implemented yet'",
+    "lint": "echo 'Linting not configured yet'"
+  },
+  "dependencies": {
+    "fastify": "^4.24.3",
+    "@aws-sdk/client-s3": "^3.428.0",
+    "@aws-sdk/client-s3-control": "^3.428.0",
+    "@aws-sdk/s3-request-presigner": "^3.428.0",
+    "@fastify/multipart": "^8.0.0",
+    "@fastify/cors": "^8.4.0",
+    "@fastify/helmet": "^11.1.1",
+    "@fastify/rate-limit": "^9.0.1",
+    "dotenv": "^16.3.1",
+    "joi": "^17.11.0",
+    "mime-types": "^2.1.35"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
